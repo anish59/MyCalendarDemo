@@ -59,6 +59,7 @@ public class MainActivity extends Activity {
 		 * calendar events samples 
 		 * */
     CalendarEventModel eventModel=new CalendarEventModel();
+        eventModel.setEventDate("2017-01-26");
 		ArrayList<CalendarEventModel> eventDays = new ArrayList<CalendarEventModel>();
 		eventDays.add(eventModel);
 	/*	eventDays.add("2017-01-26");
