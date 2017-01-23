@@ -8,19 +8,21 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.anish.mycalendardemo.helperLib.MFCalendarView;
+import com.example.anish.mycalendardemo.helperLib.MFCalendarView2;
 import com.example.anish.mycalendardemo.helperLib.Util;
 import com.example.anish.mycalendardemo.helperLib.onMFCalendarViewListener;
+import com.example.anish.mycalendardemo.model.CalendarEventModel;
 
 public class MainActivity extends Activity {
 
-	MFCalendarView mf;
+	MFCalendarView2 mf;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		mf = (MFCalendarView) findViewById(R.id.mFCalendarView);
+		mf = (MFCalendarView2) findViewById(R.id.mFCalendarView);
 
 		mf.setOnCalendarViewListener(new onMFCalendarViewListener() {
 			
@@ -56,15 +58,15 @@ public class MainActivity extends Activity {
 		/**
 		 * calendar events samples 
 		 * */
-
-		ArrayList<String> eventDays = new ArrayList<String>();
-		eventDays.add("2017-01-26");
-		eventDays.add("2017-01-26");
+    CalendarEventModel eventModel=new CalendarEventModel();
+		ArrayList<CalendarEventModel> eventDays = new ArrayList<CalendarEventModel>();
+		eventDays.add(eventModel);
+	/*	eventDays.add("2017-01-26");
 		eventDays.add(Util.getTomorrow());
-		eventDays.add(Util.getCurrentDate());
+		eventDays.add(Util.getCurrentDate());*/
 		
 		
-		mf.setEvents(eventDays);
+		mf.setCalEvents(eventDays);
 		
 		Log.e("","locale:" + Util.getLocale());
 		

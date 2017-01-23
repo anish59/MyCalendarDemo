@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.anish.mycalendardemo.R;
+import com.example.anish.mycalendardemo.model.CalendarEventModel;
 
 public class CalendarAdapter extends BaseAdapter {
 	private Context mContext;
@@ -39,6 +40,7 @@ public class CalendarAdapter extends BaseAdapter {
 	DateFormat df;
 
 	private ArrayList<String> items;
+	private ArrayList<CalendarEventModel> items2;
 	public static List<String> dayString;
 	private View previousView;
 	
@@ -76,6 +78,17 @@ public class CalendarAdapter extends BaseAdapter {
 			}
 		}
 		this.items = items;
+	}
+
+	public void setObjectItems(ArrayList<CalendarEventModel> items) {
+
+		if (items == null)
+			return;
+
+		for (int i = 0; i != items.size(); i++) {
+
+		}
+		this.items2 = items;
 	}
 	
 
