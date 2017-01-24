@@ -241,9 +241,9 @@ public class MFCalendarView extends LinearLayout{
 
 	/**
 	 * @param date like this format: "2014-01-15"
-	 * */
-	public void setEvents(ArrayList<String> dates){
-		calendaradapter.setItems(dates);
+	 * @param cc*/
+	public void setEvents(ArrayList<String> dates, ArrayList<Integer> cc){
+		calendaradapter.setItems(dates,cc);
 		handler.post(calendarUpdater);
 	}
 }

@@ -35,7 +35,7 @@ public class MFCalendarView2 extends LinearLayout{
 	private static final String TODAY = "today";
 
 	private GregorianCalendar month;
-	private CalendarAdapter calendaradapter;
+	private CalendarAdapter2 calendaradapter;
 
 	private Handler handler;
 	private ExpandableHeightGridView gridview;
@@ -74,7 +74,7 @@ public class MFCalendarView2 extends LinearLayout{
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Util.getLocale());
 		currentSelectedDate = df.format(month.getTime());
 
-		calendaradapter = new CalendarAdapter(context, month);
+		calendaradapter = new CalendarAdapter2(context, month);
 
 		gridview = (ExpandableHeightGridView) view.findViewById(R.id.gridview);
 		gridview.setAdapter(calendaradapter);
@@ -243,10 +243,10 @@ public class MFCalendarView2 extends LinearLayout{
 	/**
 	 * @param date like this format: "2014-01-15"
 	 * */
-	public void setEvents(ArrayList<String> dates){
+	/*public void setEvents(ArrayList<String> dates){
 		calendaradapter.setItems(dates);
 		handler.post(calendarUpdater);
-	}
+	}*/
 
 	public void setCalEvents(ArrayList<CalendarEventModel> dates) {
 		calendaradapter.setObjectItems(dates);
